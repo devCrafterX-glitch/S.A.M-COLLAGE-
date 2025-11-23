@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.A.M Result Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Header -->
+        <div class="main-header">
+            <h1>S.A.M RESULT PORTAL</h1>
+            <p>Access Your Academic Results</p>
+        </div>
+
+        <!-- Home Screen - Class Selection -->
+        <div id="homeScreen">
+            <div class="class-grid">
+                <!-- 11th Sci / IT Card -->
+                <div class="class-card" onclick="selectClass('11th', '11th Sci / IT')">
+                    <svg class="class-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="40" cy="40" r="25" stroke="#667eea" stroke-width="3" fill="none"/>
+                        <circle cx="40" cy="40" r="4" fill="#667eea"/>
+                        <circle cx="55" cy="30" r="4" fill="#764ba2"/>
+                        <circle cx="55" cy="50" r="4" fill="#764ba2"/>
+                        <circle cx="25" cy="30" r="4" fill="#764ba2"/>
+                        <circle cx="25" cy="50" r="4" fill="#764ba2"/>
+                        <rect x="65" y="50" width="45" height="35" rx="5" fill="#667eea" opacity="0.2"/>
+                        <rect x="70" y="55" width="35" height="20" rx="2" fill="#667eea"/>
+                        <rect x="75" y="78" width="8" height="3" rx="1" fill="#764ba2"/>
+                        <rect x="85" y="78" width="8" height="3" rx="1" fill="#764ba2"/>
+                        <rect x="95" y="78" width="8" height="3" rx="1" fill="#764ba2"/>
+                    </svg>
+                    <h2>11th Sci / IT</h2>
+                    <p>Science & Information Technology</p>
+                </div>
+
+                <!-- 12th Sci / IT Card -->
+                <div class="class-card" onclick="selectClass('12_Sci_IT', '12th Sci / IT')">
+                    <svg class="class-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M35 35 L35 70 L25 75 L25 30 Z" fill="#667eea" opacity="0.3"/>
+                        <path d="M35 35 L35 70 L45 75 L45 30 Z" fill="#667eea" opacity="0.5"/>
+                        <ellipse cx="35" cy="35" rx="10" ry="5" fill="#764ba2"/>
+                        <path d="M60 45 L75 45 M67.5 37 L67.5 53 M75 50 L85 50 L85 65 L75 65 Z M95 50 L105 50 L105 65 L95 65 L95 50 Z" stroke="#667eea" stroke-width="3" stroke-linecap="round"/>
+                        <circle cx="90" cy="75" r="8" stroke="#764ba2" stroke-width="2" fill="none"/>
+                        <path d="M85 75 L95 75 M90 70 L90 80" stroke="#764ba2" stroke-width="2"/>
+                    </svg>
+                    <h2>12th Sci / IT</h2>
+                    <p>Advanced Science & Technology</p>
+                </div>
+
+                <!-- 12th Commerce Card -->
+                <div class="class-card" onclick="selectClass('sheet12commerce', '12th Commerce')">
+                    <svg class="class-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="30" y="35" width="60" height="50" rx="5" fill="#667eea" opacity="0.2"/>
+                        <rect x="35" y="40" width="50" height="35" rx="3" fill="white" stroke="#667eea" stroke-width="2"/>
+                        <path d="M45 50 L75 50 M45 58 L70 58 M45 66 L65 66" stroke="#764ba2" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="60" cy="25" r="12" fill="#667eea"/>
+                        <path d="M60 20 L60 30 M55 25 L65 25" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M50 85 L50 95 M70 85 L70 95" stroke="#667eea" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <h2>12th Commerce</h2>
+                    <p>Business & Commerce</p>
+                </div>
+
+                <!-- Notices & Notes Card - Now part of the grid -->
+                <div class="notices-card">
+                    <svg class="notices-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Clipboard/Notice Board Icon -->
+                        <rect x="30" y="20" width="60" height="80" rx="5" fill="#667eea" opacity="0.2"/>
+                        <rect x="35" y="15" width="50" height="10" rx="5" fill="#764ba2"/>
+                        <rect x="40" y="30" width="40" height="4" rx="2" fill="#667eea"/>
+                        <rect x="40" y="40" width="35" height="4" rx="2" fill="#667eea" opacity="0.7"/>
+                        <rect x="40" y="50" width="40" height="4" rx="2" fill="#667eea"/>
+                        <rect x="40" y="60" width="30" height="4" rx="2" fill="#667eea" opacity="0.7"/>
+                        <rect x="40" y="70" width="35" height="4" rx="2" fill="#667eea"/>
+                        <circle cx="95" cy="85" r="15" fill="#764ba2"/>
+                        <path d="M95 78 L95 92 M88 85 L102 85" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <h2>Notices & Notes</h2>
+                    <p>Important Announcements</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Roll Number Input Screen -->
+        <div id="rollScreen">
+            <div class="input-container">
+                <h2 id="selectedClassName"></h2>
+                <div class="input-group">
+                    <label for="rollInput">Enter Roll Number</label>
+                    <input type="text" id="rollInput" placeholder="e.g., 101" />
+                </div>
+                <button class="btn btn-primary" onclick="fetchResult()">Check Result</button>
+                <button class="btn btn-secondary" onclick="goHome()">Back to Home</button>
+                <div id="messageBox" class="message"></div>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="resultScreen">
+            <div class="result-container">
+                <h2>Student Result Card</h2>
+                <table class="result-table" id="resultTable"></table>
+                <button class="btn btn-primary btn-back" onclick="goHome()">Back to Home</button>
+            </div>
+        </div>
+
+        <!-- Floating AI Chatbot Button -->
+        <div class="chatbot-button" onclick="toggleChatbox()">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 8C18.8 8 8 18.8 8 32C8 38.4 10.4 44.4 14.4 49.2L12 56L18.8 53.6C23.2 56.8 28.4 58.4 32 58.4C45.2 58.4 56 47.6 56 34.4C56 21.2 45.2 8 32 8Z" fill="white"/>
+                <circle cx="24" cy="30" r="3" fill="#667eea"/>
+                <circle cx="32" cy="30" r="3" fill="#667eea"/>
+                <circle cx="40" cy="30" r="3" fill="#667eea"/>
+                <path d="M22 40 Q32 45 42 40" stroke="#667eea" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <rect x="28" y="44" width="8" height="6" rx="1" fill="#764ba2"/>
+            </svg>
+        </div>
+
+        <!-- Chatbox -->
+        <div class="chatbox" id="chatbox">
+            <div class="chatbox-header">
+                <h3>AI Assistant</h3>
+                <button class="close-chatbox" onclick="toggleChatbox()">×</button>
+            </div>
+            <div class="chatbox-body">
+                <strong>Coming Soon – Smart Bot</strong>
+                <p>Our intelligent assistant is on the way! Soon you'll be able to get instant help with your queries.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            Powered by <span>S.A.M Result Portal</span> © 2025
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
